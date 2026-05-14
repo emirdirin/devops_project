@@ -1,0 +1,24 @@
+services:
+  mysql:
+    image: 'emirdirin/mysql:8'
+    container_name: mysql-container2
+    environment:
+     - 'MYSQL_DATABASE=devops_db'
+     - 'MYSQL_ROOT_PASSWORD=2569'
+    ports:
+     - '3307:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  myapp:
+   image: 'emirdirin/myapp4:latest'
+   container_name: myapp-container4
+   environment:
+     SPRING_PROFILES_ACTIVE: docker
+   depends_on:
+    - mysql
+   ports:
+     - '8081:8080'
+
+volumes:
+  mysql-data:
