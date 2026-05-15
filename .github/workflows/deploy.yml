@@ -24,7 +24,7 @@ jobs:
 
       # 4: Compile Project with Gradle Wrapper.
       - name: Build with Gradle Wrapper
-        run: ./gradlew build -x test
+        run: ./gradlew build
 
       # 5: List build files.
       - name: List files
