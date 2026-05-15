@@ -12,7 +12,7 @@ services:
 
   myapp:
    image: 'emirdirin/myapp5:latest'
-   container_name: myapp-container4
+   container_name: myapp-container5
    environment:
      SPRING_PROFILES_ACTIVE: docker
    depends_on:
