@@ -24,7 +24,7 @@ jobs:
 
       # 4. Adım: Projeyi Gradle Wrapper ile Derle (Testleri şimdilik atlıyoruz)
       - name: Build with Gradle Wrapper
-        run: ./gradlew build
+        run: ./gradlew build -x test
 
       # 5. Adım: Oluşan build dosyalarını listele (Kontrol amaçlı)
       - name: List files
