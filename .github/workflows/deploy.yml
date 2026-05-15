@@ -1,10 +1,8 @@
 name: devops_project
-
 # This workflow only works when a push is made to the main branch.
 on:
   push:
     branches: ["main"]
-
 
 jobs:
   build:
@@ -26,7 +24,7 @@ jobs:
 
       # 4. Adım: Projeyi Gradle Wrapper ile Derle (Testleri şimdilik atlıyoruz)
       - name: Build with Gradle Wrapper
-        run: ./gradlew build #-x test
+        run: ./gradlew build
 
       # 5. Adım: Oluşan build dosyalarını listele (Kontrol amaçlı)
       - name: List files
