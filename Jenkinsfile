@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Project is being compiled and .jar file is being created'
                 sh 'chmod +x gradlew'
-                //sh './gradlew clean build -x test'
+                //sh './gradlew clean build -x test' //
                 sh "./gradlew clean bootJar"
             }
         }
