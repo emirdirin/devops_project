@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
     @GetMapping("/")
     public String home(){
-        return " This is the home page of the application";
+        return " This is the home page of the application. Jenkins pipeline worked successfully! -----";
     }
 }
