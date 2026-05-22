@@ -48,7 +48,7 @@ pipeline {
                     steps {
                         echo 'Our application is being launched on Minikube...'
                         // KUBECONFIG yolunu senin WSL kullanıcının gizli config dosyasına eşitliyoruz
-                        withEnv(["KUBECONFIG=/home/emir/.kube/config"]) {
+                        withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) {
                             sh 'kubectl apply -f k8s/deployment.yaml'
                             sh 'kubectl apply -f k8s/service.yaml'
                         }
