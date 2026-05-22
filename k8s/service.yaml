@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 32000  # Tarayıcıdan http://localhost:32000 yazarak erişeceğiz
+      nodePort: 32000  # Access with http://localhost:32000 from browser.

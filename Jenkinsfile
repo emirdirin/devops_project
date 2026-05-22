@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     environment {
-        // BURAYI DEĞİŞTİR: Docker Hub kullanıcı adını tırnak içine yaz
         DOCKER_HUB_USER = 'emirdirin'
 
-        // Jenkins imajı bu isimle oluşturacak (k8s dosyalarınla uyumlu)
+        // Jenkins will create the image with this name
         IMAGE_NAME      = 'devops_project4_image'
 
-        // Jenkins Credentials'a ekleyeceğimiz Docker Hub kimlik ID'si
+        // The Docker Hub ID that we will add to Jenkins Credentials.
         DOCKER_CRED_ID  = 'docker-hub-credentials'
     }
 
