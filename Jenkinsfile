@@ -43,13 +43,23 @@ pipeline {
             }
         }
 
-        stage('4. Deploy to Kubernetes (K8s Deploy)') {
+       /* stage('4. Deploy to Kubernetes (K8s Deploy)') {
             steps {
                 echo 'Our application is being launched on Minikube...'
                 sh 'kubectl apply -f k8s/deployment.yaml'
                 sh 'kubectl apply -f k8s/service.yaml'
             }
-        }
+        }*/
+        stage('4. Deploy to Kubernetes (K8s Deploy)') {
+                    steps {
+                        echo 'Our application is being launched on Minikube...'
+                        // KUBECONFIG yolunu senin WSL kullanıcının gizli config dosyasına eşitliyoruz
+                        withEnv(["KUBECONFIG=/home/emir/.kube/config"]) {
+                            sh 'kubectl apply -f k8s/deployment.yaml'
+                            sh 'kubectl apply -f k8s/service.yaml'
+                        }
+                    }
+                }
     }
 
     post {
