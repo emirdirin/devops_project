@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-service          # Spring Boot will use this name to connect!
+  name: mysql-service         # Spring Boot will use this name to connect!
 spec:
   selector:
     app: mysql
