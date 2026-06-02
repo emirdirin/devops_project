@@ -17,6 +17,15 @@ spec:
       containers:
         - name: spring-boot-app
           image: emirdirin/devops_project4_image
+          env:  # look at the application.properties file
+            - name: DB_HOST
+              value: "mysql-service"   # The name of the service in Kubernetes
+            - name: DB_NAME
+              value: "devops_db"
+            - name: DB_USER
+              value: "root"
+            - name: DB_PASSWORD
+              value: "2569"
           ports:
             - containerPort: 8080
           imagePullPolicy: Always

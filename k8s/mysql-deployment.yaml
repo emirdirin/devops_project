@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: '2569'
+        - name: MYSQL_DATABASE
+          value: devops_db     # The DB name that Spring Boot will connect
+        ports:
+        - containerPort: 3306
+          name: mysql
+
+---  # service file code below
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service          # Spring Boot will use this name to connect!
+spec:
+  selector:
+    app: mysql
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
